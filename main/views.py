@@ -4,13 +4,15 @@ from django.shortcuts import render
 # Create your views here.
 def index(request):
     context = {
-        'title': 'DarkMoon',
-        'content': 'Главная страница магазина DarkMoon',
-        'list': ['first', 'second'],
-        'dict': {'first': 1},
-        'bool': True
+        'title': 'DarkMoon - главная',
+        'content': 'Магазин милового мерча'
     }
     return render(request, 'main/index.html', context)
 
 def about(request):
-    return HttpResponse('About page')
+    context = {
+        'title': 'DarkMoon - О нас (не ононас)',
+        'content': 'Ононас',
+        'text_on_page': 'Ононасов нет тут'
+    }
+    return render(request, 'main/about.html', context)
